@@ -1,0 +1,521 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Online Shopping System</title>
+		
+		<link rel="icon" href="coin-us-dollar-icon.png">
+		<link rel="stylesheet" href="systemMain.css" type="text/css">
+		<style>
+			*{
+				font-family:"Times New Roman";
+			}
+			body{
+				background-color:turquoise;
+			}
+			#OSName{
+				font-size:45px;
+			}
+			#accountCreation{
+				top:0px;
+				left:0px;
+				width:100%;
+				height:100%;
+				position:fixed;
+			}
+			#account{
+				color:blue;
+				font-size:50px;
+				text-shadow:-2px 2px 2px black;
+				background-image:radial-gradient(skyblue,white,black);
+				background-color:#ddd;
+				width:100%;
+				height:90px;
+				padding-top:20px;
+				border:2px groove #ccc;
+				position:absolute;
+				left:0px;
+				top:0px;
+				color:rgb(128,128,0);
+				animation:sliding 8s linear infinite;
+			}
+			@keyframes sliding{
+				0%{color:rgb(113,113,0);}
+				15%{color:rgb(89,89,0);}
+				20%{color:rgb(149,149,0);}
+				25%{color:rgb(128,64,0);}
+				30%{color:rgb(158,158,80);}
+				35%{color:rgb(221,194,9);}
+				40%{color:rgb(185,185,0);}
+				45%{color:rgb(128,128,0);}
+				50%{color:rgb(128,0,0);}
+				55%{color:rgb(13,115,109);}
+				60%{color:rgb(255,0,128);}
+				65%{color:rgb(0,128,255);}
+				70%{color:rgb(21,223,234);}
+				75%{color:rgb(159,159,0);}
+				80%{color:rgb(100,100,0);}
+				85%{color:rgb(128,128,0);}
+				90%{color:rgb(128,0,128);}
+				95%{color:rgb(94,94,0);}
+				100%{color:rgb(115,115,0);}
+			}
+			
+			#shopName{
+				background-color:rgb(104,0,104);
+				width:620px;
+				height:60px;
+				font-size:40px;
+				color:turquoise;
+				margin-top:260px;
+				border-left:rgb(104,0,104);
+				border-right:rgb(104,0,104);
+				border-top:rgb(104,0,104);
+				border-bottom:3px groove #ccc;
+				
+				font-family:"Harlow Solid";
+				text-align:center;
+			}
+			#phoneNumber{
+				background-color:rgb(104,0,104);
+				width:620px;
+				height:60px;
+				font-size:40px;
+				color:turquoise;
+				margin-top:260px;
+				border-left:rgb(104,0,104);
+				border-right:rgb(104,0,104);
+				border-top:rgb(104,0,104);
+				border-bottom:3px groove #ccc;
+				
+				font-family:"Harlow Solid";
+				text-align:center;
+			}
+			#connectBank{
+				background-color:rgb(104,0,104);
+				width:620px;
+				height:58px;
+				font-size:40px;
+				color:rgb(168,168,0);
+				margin-top:260px;
+				border-left:rgb(104,0,104);
+				border-right:rgb(104,0,104);
+				border-top:rgb(104,0,104);
+				border-bottom:3px groove #ccc;
+				
+				font-family:"Harlow Solid";
+				text-align:center;
+			}
+			#name{
+				width:140px;
+				height:40px;
+				font-size:25px;
+				margin-top:10px;
+				border:3.5px groove rgb(128,128,0);
+				background-color:rgb(200,200,200);
+				color:rgb(90,90,0);
+			}
+			#name:hover{
+				background-color:rgb(100,100,0);
+				color:rgb(200,200,200);
+				border:3.5px groove rgb(200,200,200);
+			}
+			#bname{
+				width:140px;
+				height:40px;
+				font-size:25px;
+				margin-top:10px;
+				border:3.5px groove rgb(128,128,0);
+				background-color:rgb(200,200,200);
+				color:rgb(90,90,0);
+			}
+			#bname:hover{
+				background-color:rgb(100,100,0);
+				color:rgb(200,200,200);
+				border:3.5px groove rgb(200,200,200);
+			}
+			#contact{
+				width:140px;
+				height:40px;
+				font-size:25px;
+				margin-top:10px;
+				border:3.5px groove rgb(128,128,0);
+				background-color:rgb(200,200,200);
+				color:rgb(90,90,0);
+			}
+			#contact:hover{
+				background-color:rgb(100,100,0);
+				color:rgb(200,200,200);
+				border:3.5px groove rgb(200,200,200);
+			}
+			#bcontact{
+				width:140px;
+				height:40px;
+				font-size:25px;
+				margin-top:10px;
+				border:3.5px groove rgb(128,128,0);
+				background-color:rgb(200,200,200);
+				color:rgb(90,90,0);
+			}
+			#bcontact:hover{
+				background-color:rgb(100,100,0);
+				color:rgb(200,200,200);
+				border:3.5px groove rgb(200,200,200);
+			}
+			#errorFlag{
+				width:140px;
+				height:40px;
+				font-size:25px;
+				margin-top:10px;
+				border:3.5px groove rgb(128,128,0);
+				background-color:rgb(200,200,200);
+				color:rgb(90,90,0);
+			}
+			#errorFlag:hover{
+				background-color:rgb(100,100,0);
+				color:rgb(200,200,200);
+				border:3.5px groove rgb(200,200,200);
+			}
+			#bank{
+				width:140px;
+				height:40px;
+				font-size:25px;
+				margin-top:10px;
+				border:3.5px groove rgb(128,128,0);
+				background-color:rgb(200,200,200);
+				color:rgb(90,90,0);
+			}
+			#bank:hover{
+				background-color:rgb(100,100,0);
+				color:rgb(200,200,200);
+				border:3.5px groove rgb(200,200,200);
+			}
+			#bbank{
+				width:140px;
+				height:40px;
+				font-size:25px;
+				margin-top:10px;
+				border:3.5px groove rgb(128,128,0);
+				background-color:rgb(200,200,200);
+				color:rgb(90,90,0);
+			}
+			#bbank:hover{
+				background-color:rgb(100,100,0);
+				color:rgb(200,200,200);
+				border:3.5px groove rgb(200,200,200);
+			}
+			#finish{
+				width:140px;
+				height:40px;
+				font-size:25px;
+				margin-top:438px;
+				margin-left:10px;
+				border:3.5px groove rgb(128,128,0);
+				background-color:rgb(200,200,200);
+				color:rgb(90,90,0);
+			}
+			#finish:hover{
+				background-color:rgb(100,100,0);
+				color:rgb(200,200,200);
+				border:3.5px groove rgb(200,200,200);
+			}
+			#createSite1{
+				position:absolute;
+				top:113.5px;
+				left:0;
+				width:100%;
+				height:70.1%;
+				background-color:rgb(104,0,104);
+			}
+			#createSite2{
+				position:absolute;
+				top:113.5px;
+				left:0;
+				width:100%;
+				height:70.1%;
+				background-color:rgb(104,0,104);
+				display:none;
+			}
+			#createSite3{
+				position:absolute;
+				top:113.5px;
+				left:0;
+				width:100%;
+				height:70.1%;
+				background-color:rgb(104,0,104);
+				display:none;
+			}
+			#createSite4{
+				position:absolute;
+				top:130px;
+				left:74%;
+				width:25%;
+				height:65%;
+				background-color:#f1f1f1;
+				display:none;
+				border:3px groove #ddd;
+			}
+			#first{
+				width:14px;
+				height:14px;
+				border-radius:50%;
+				background-color:rgb(124,124,124);
+				position:absolute;
+				top:550px;
+				left:722px;
+				border:1px solid black;
+			}
+			#second{
+				width:14px;
+				height:14px;
+				border-radius:50%;
+				background-color:#f1f1f1;
+				position:absolute;
+				top:550px;
+				left:762px;
+				border:1px solid black;
+			}
+			#third{
+				width:14px;
+				height:14px;
+				border-radius:50%;
+				background-color:#f1f1f1;
+				position:absolute;
+				top:550px;
+				left:802px;
+				border:1px solid black;
+			}
+			#contactBar{
+				background-image:linear-gradient(skyblue,white,black);
+				background-color:#ddd;
+				width:100%;
+				height:97.5px;
+				padding-top:10px;
+				border:2px groove #ccc;
+				position:absolute;
+				left:0px;
+				top:639.5px;
+			}
+			#themes01{
+				position:absolute;
+				top:20px;
+				left:660px;
+				width:220px;
+				height:220px;
+			}
+			#themes02{
+				position:absolute;
+				top:20px;
+				left:660px;
+				width:220px;
+				height:220px;
+			}
+			#themes03{
+				position:absolute;
+				top:20px;
+				left:660px;
+				width:220px;
+				height:220px;
+			}
+
+			#fadeEffect{
+				position:absolute;
+				top:130px;
+				left:74%;
+				width:25%;
+				height:65%;
+				background-color:#f1f1f1;
+				display:none;
+				border:3px groove #ddd;
+				animation:fadeEffect 0.5s;
+			}
+			@keyframes fadeEffect{
+				from{opacity:0;}
+				to{opacity:1;}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="accountCreation">
+			<center><div id="account">Welcome from Online Shopping System</div></center>
+			
+			
+			<div id="createSite1">
+				<img src="shop-icon.png" id="themes01">
+				<center><input type="text" placeholder="Enter your Shop's Name..." id="shopName"></center>
+				<center><input type="submit" value="Next" id="name"></center>
+			</div>
+			<div id="createSite2">
+				<img src="phone-icon.png" id="themes02">
+				<center><input type="text" placeholder="Enter your Phone Number..." id="phoneNumber"></center>
+				<center><input type="submit" value="Back" id="bname"><input type="submit" value="Next" id="contact"></center>
+			</div>
+			<div id="createSite3">
+				<img src="bank-icon.png" id="themes03">
+				<center><div id="connectBank">Connect with Bank Account...</div></center>
+				<center><input type="submit" value="Back" id="bcontact"><input type="submit" value="Connect" id="bank"></center>
+			</div>
+			<div id="createSite4" class="no">
+				<center><input type="submit" value="Back" id="bbank"><input type="submit" value="Finish" id="finish"></center>
+			</div>
+			<div id="first"></div>
+			<div id="second"></div>
+			<div id="third"></div>
+			<div id="contactBar"></div>
+		</div>
+
+		<div id="systemMain">
+			<img src="html12.jpg" width="60%" height="76%" id="image">
+		
+			<div id="bar">
+				<button id="home">Home</buttom>
+				<button id="oderItems">Order Items</button>
+				<button id="customerList">Customer List</button>
+				<button id="promotion">Promotion</button>
+				<button id="luckydraw">Lucky Draw</button>
+				<button id="agent">Agent</button>
+				<button id="idcontact">Contact</button>
+			</div>
+			<div id="bar1">
+				<div id="clock"></div>
+				<button id="calculator">Calculator</button>
+				<div id="settingbar"></div>
+				<div id="settingopen">
+					<img src="settings-icon.png" id="setting-icon">
+					<div id="setting-text">Setting</div>
+					<div id="open"><center><img src="Arrows-Down-4-icon.png" id="down"></center></div>
+				</div>
+				<div id="setting-page">
+					<input type="file" name="file" multiple id="file" onchange="loadFile(event)" placeholder="Choose photo" hidden>
+					<div id="button"><center><label for="file" id="click">Change Profile</label></center></div>
+					<button id="changename">Change OS's Name</button>
+					<button id="theme">Theme</button>
+					<button id="security">Security</button>
+					<button id="information">Information</button>
+					<button id="personal">Personal</button>
+				</div>
+				<div id="settingclose">
+					<!--<img src="settings-icon.png" id="setting-icon1">
+					<div id="setting-text1">Setting</div>-->
+					<div id="close"><center><img src="Arrows-Up-4-icon.png" id="up"></center></div>
+				</div>
+			</div>
+		
+			<div id="homeMain">
+				<div id="page">
+				
+				</div>
+			</div>
+			<div id="textBar">
+				<p id="text">Thanks you so much for odering!</p>
+			</div>
+			<div id="highlight">
+				<div id="border-board">
+				
+				</div>
+				<div id="board">
+					<center><h1 id="OSName"></h1></center>
+				</div>	
+			</div>
+		</div>
+
+		<script src="systemMain.js"></script>
+		<script>
+			var shopName;
+			var sName = document.getElementById("shopName");
+			var nameGo = document.getElementById("name");
+			var backName = document.getElementById("bname");
+
+			var phoneNumber;
+			var pNumber = document.getElementById("phoneNumber");
+			var contactGo = document.getElementById("contact");
+			var backContact = document.getElementById("bcontact");
+			
+			var connectBank = document.getElementById("bank");
+			var backBank = document.getElementById("bbank");
+			var accountFinish = document.getElementById("finish");
+
+			var first = document.getElementById("first");
+			var second = document.getElementById("second");
+			var third = document.getElementById("third");
+			var createSite1 = document.getElementById("createSite1");
+			var createSite2 = document.getElementById("createSite2");
+			var createSite3 = document.getElementById("createSite3");
+			var createSite4 = document.getElementById("createSite4");
+			nameGo.onclick = function(){
+				first.style.backgroundColor = "#f1f1f1";
+				second.style.backgroundColor = "rgb(124,124,124)";
+				createSite1.style.display = "none";
+				createSite2.style.display = "block";
+				shopName = sName.value;
+				//alert(shopName);
+			}
+			backName.onclick = function(){
+				first.style.backgroundColor = "rgb(124,124,124)";
+				second.style.backgroundColor = "#f1f1f1";
+				createSite1.style.display = "block";
+				createSite2.style.display = "none";
+			}
+	
+			contactGo.onclick = function(){
+				second.style.backgroundColor = "#f1f1f1";
+				third.style.backgroundColor = "rgb(124,124,124)";
+				createSite2.style.display = "none";
+				createSite3.style.display = "block";
+				phoneNumber = pNumber.value;
+				//alert(phoneNumber);
+			}
+			backContact.onclick = function(){
+				second.style.backgroundColor = "rgb(124,124,124)";
+				third.style.backgroundColor = "#f1f1f1";
+				createSite2.style.display = "block";
+				createSite3.style.display = "none";
+			}
+			
+			var i=0;
+			connectBank.onclick = function(){
+				backContact.id = "errorFlag";
+				var errorFlag = document.getElementById("errorFlag");
+				errorFlag.onclick = function(){
+					i++;
+					if( (i%2) != 0 ){
+						createSite4.id = "fadeEffect";
+					}else{
+						i=0;
+						document.getElementById("fadeEffect").id = "createSite4";
+					}
+				}
+				createSite4.style.display = "block";
+				
+			}
+			
+			backBank.onclick = function(){
+				i = 0;
+				var errorF = document.getElementById("errorFlag");
+				errorF.id = "bcontact";
+				document.getElementById("bcontact").onclick = function(){
+					second.style.backgroundColor = "rgb(124,124,124)";
+					third.style.backgroundColor = "#f1f1f1";
+					createSite2.style.display = "block";
+					createSite3.style.display = "none";
+					//alert("OK");
+				}
+				createSite4.style.display = "none";
+				document.getElementById("fadeEffect").style.display = "none";
+				document.getElementById("fadeEffect").id = "createSite4";
+			}
+
+			accountFinish.onclick = function(){
+				document.getElementById("account").style.display = "none";
+				createSite3.style.display = "none";
+				createSite4.style.display = "none";
+				first.style.display = "none";
+				second.style.display = "none";
+				third.style.display = "none";
+				document.getElementById("contactBar").style.display = "none";
+				document.getElementById("OSName").innerHTML = shopName;
+				document.getElementById("systemMain").style.display = "block";
+			}
+
+		</script>
+	</body>
+</html>
